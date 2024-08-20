@@ -1,0 +1,248 @@
+import 'package:appflowy/generated/flowy_svgs.g.dart';
+import 'package:appflowy/generated/locale_keys.g.dart';
+import 'package:appflowy/mobile/application/mobile_router.dart';
+import 'package:appflowy/plugins/base/emoji/emoji_text.dart';
+import 'package:appflowy/plugins/document/application/document_bloc.dart';
+import 'package:appflowy/plugins/document/presentation/editor_plugins/mention/mention_block.dart';
+import 'package:appflowy/plugins/document/presentation/editor_plugins/mention/mobile_page_selector_sheet.dart';
+import 'package:appflowy/plugins/trash/application/trash_service.dart';
+import 'package:appflowy/startup/startup.dart';
+import 'package:appflowy/workspace/application/tabs/tabs_bloc.dart';
+import 'package:appflowy/workspace/application/view/prelude.dart';
+import 'package:appflowy/workspace/application/view/view_ext.dart';
+import 'package:appflowy_backend/log.dart';
+import 'package:appflowy_backend/protobuf/flowy-folder/protobuf.dart';
+import 'package:appflowy_editor/appflowy_editor.dart'
+    show
+        Delta,
+        EditorState,
+        Node,
+        PlatformExtension,
+        TextInsert,
+        TextTransaction,
+        paragraphNode;
+import 'package:collection/collection.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flowy_infra_ui/flowy_infra_ui.dart';
+import 'package:flowy_infra_ui/style_widget/hover.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
+
+final pageMemorizer = <String, ViewPB?>{};
+
+Node pageMentionNode(String viewId) {
+  return paragraphNode(
+    delta: Delta(
+      operations: [
+        TextInsert(
+          '\$',
+          attributes: {
+            MentionBlockKeys.mention: {
+              MentionBlockKeys.type: MentionType.page.name,
+              MentionBlockKeys.pageId: viewId,
+            },
+          },
+        ),
+      ],
+    ),
+  );
+}
+
+class MentionPageBlock extends StatefulWidget {
+  const MentionPageBlock({
+    super.key,
+    required this.editorState,
+    required this.pageId,
+    required this.node,
+    required this.textStyle,
+    required this.index,
+  });
+
+  final EditorState editorState;
+  final String pageId;
+  final Node node;
+  final TextStyle? textStyle;
+
+  // Used to update the block
+  final int index;
+
+  @override
+  State<MentionPageBlock> createState() => _MentionPageBlockState();
+}
+
+class _MentionPageBlockState extends State<MentionPageBlock> {
+  late final EditorState editorState;
+  late final ViewListener viewListener = ViewListener(viewId: widget.pageId);
+  late Future<ViewPB?> viewPBFuture;
+
+  @override
+  void initState() {
+    super.initState();
+
+    editorState = context.read<EditorState>();
+    viewPBFuture = fetchView(widget.pageId);
+    viewListener.start(
+      onViewUpdated: (p0) {
+        pageMemorizer[p0.id] = p0;
+        viewPBFuture = fetchView(widget.pageId);
+        editorState.reload();
+      },
+    );
+  }
+
+  @override
+  void dispose() {
+    viewListener.stop();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<ViewPB?>(
+      initialData: pageMemorizer[widget.pageId],
+      future: viewPBFuture,
+      builder: (context, state) {
+        final view = state.data;
+        // memorize the result
+        pageMemorizer[widget.pageId] = view;
+        if (view == null) {
+          return FlowyHover(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4),
+              child: FlowyText(
+                LocaleKeys.document_mention_noAccess.tr(),
+                color: Theme.of(context).disabledColor,
+                decoration: TextDecoration.underline,
+                fontSize: widget.textStyle?.fontSize,
+                fontWeight: widget.textStyle?.fontWeight,
+              ),
+            ),
+          );
+        }
+
+        final iconSize = widget.textStyle?.fontSize ?? 16.0;
+        Widget child = Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const HSpace(4),
+            view.icon.value.isNotEmpty
+                ? EmojiText(
+                    emoji: view.icon.value,
+                    fontSize: 12,
+                    textAlign: TextAlign.center,
+                    lineHeight: 1.3,
+                  )
+                : FlowySvg(
+                    view.layout.icon,
+                    size: Size.square(iconSize + 2.0),
+                  ),
+            const HSpace(2),
+            FlowyText(
+              view.name,
+              decoration: TextDecoration.underline,
+              fontSize: widget.textStyle?.fontSize,
+              fontWeight: widget.textStyle?.fontWeight,
+            ),
+            const HSpace(4),
+          ],
+        );
+
+        if (PlatformExtension.isDesktop) {
+          child = Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 2),
+            child: FlowyHover(
+              cursor: SystemMouseCursors.click,
+              child: child,
+            ),
+          );
+        }
+
+        return GestureDetector(
+          onTap: handleTap,
+          onDoubleTap: PlatformExtension.isMobile ? handleDoubleTap : null,
+          behavior: HitTestBehavior.opaque,
+          child: child,
+        );
+      },
+    );
+  }
+
+  Future<void> handleTap() async {
+    debugPrint('handleTap');
+    final view = await fetchView(widget.pageId);
+    if (view == null) {
+      Log.error('Page(${widget.pageId}) not found');
+      return;
+    }
+
+    if (PlatformExtension.isMobile && mounted) {
+      await context.pushView(view);
+    } else {
+      getIt<TabsBloc>().add(
+        TabsEvent.openPlugin(plugin: view.plugin(), view: view),
+      );
+    }
+  }
+
+  Future<void> handleDoubleTap() async {
+    if (!PlatformExtension.isMobile) {
+      return;
+    }
+
+    final currentViewId = context.read<DocumentBloc>().documentId;
+    final viewId = await showPageSelectorSheet(
+      context,
+      currentViewId: currentViewId,
+      selectedViewId: widget.pageId,
+    );
+
+    if (viewId != null) {
+      // Update this nodes pageId
+      final transaction = widget.editorState.transaction
+        ..formatText(
+          widget.node,
+          widget.index,
+          1,
+          {
+            MentionBlockKeys.mention: {
+              MentionBlockKeys.type: MentionType.page.name,
+              MentionBlockKeys.pageId: viewId,
+            },
+          },
+        );
+
+      await widget.editorState.apply(transaction, withUpdateSelection: false);
+    }
+  }
+
+  Future<ViewPB?> fetchView(String pageId) async {
+    final view = await ViewBackendService.getView(pageId).then(
+      (value) => value.toNullable(),
+    );
+
+    if (view == null) {
+      // try to fetch from trash
+      final trashViews = await TrashService().readTrash();
+      final trash = trashViews.fold(
+        (l) => l.items.firstWhereOrNull((element) => element.id == pageId),
+        (r) => null,
+      );
+      if (trash != null) {
+        return ViewPB()
+          ..id = trash.id
+          ..name = trash.name;
+      }
+    }
+
+    return view;
+  }
+
+  void updateSelection() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      editorState.updateSelectionWithReason(
+        editorState.selection,
+      );
+    });
+  }
+}

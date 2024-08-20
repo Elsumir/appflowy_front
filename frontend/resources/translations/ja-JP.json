@@ -1,0 +1,693 @@
+{
+  "appName": "AppFlowy",
+  "defaultUsername": "ユーザー",
+  "welcomeText": "Welcome to @:appName",
+  "welcomeTo": "ようこそ",
+  "githubStarText": "Star on GitHub",
+  "subscribeNewsletterText": "新着情報を受け取る",
+  "letsGoButtonText": "Let's Go",
+  "title": "タイトル",
+  "youCanAlso": "他にもこんなことができます",
+  "and": "と",
+  "blockActions": {
+    "addBelowTooltip": "クリックして下に追加してください",
+    "addAboveCmd": "Alt+クリック",
+    "addAboveMacCmd": "Option+クリック",
+    "addAboveTooltip": "上に追加する",
+    "dragTooltip": "ドラッグして移動",
+    "openMenuTooltip": "クリックしてメニューを開く"
+  },
+  "signUp": {
+    "buttonText": "新規登録",
+    "title": "@:appNameに新規登録",
+    "getStartedText": "はじめる",
+    "emptyPasswordError": "パスワードを空にはできません",
+    "repeatPasswordEmptyError": "パスワード（確認用）を空にはできません",
+    "unmatchedPasswordError": "パスワード（確認用）が一致しません",
+    "alreadyHaveAnAccount": "すでにアカウントを登録済ですか？",
+    "emailHint": "メールアドレス",
+    "passwordHint": "パスワード",
+    "repeatPasswordHint": "パスワード（確認用）"
+  },
+  "signIn": {
+    "loginTitle": "@:appName にログイン",
+    "loginButtonText": "ログイン",
+    "buttonText": "サインイン",
+    "signingInText": "サインイン中...",
+    "forgotPassword": "パスワードをお忘れですか？",
+    "emailHint": "メールアドレス",
+    "passwordHint": "パスワード",
+    "dontHaveAnAccount": "まだアカウントをお持ちではないですか？",
+    "repeatPasswordEmptyError": "パスワード（確認用）を空にはできません",
+    "unmatchedPasswordError": "パスワード（確認用）が一致しません",
+    "syncPromptMessage": "データの同期に時間がかかる場合があります。ページを閉じないでください。",
+    "magicLinkSent": "マジックリンクが送信されました！",
+    "LogInWithGoogle": "Googleでログイン",
+    "LogInWithGithub": "GitHubでログイン",
+    "LogInWithDiscord": "Discordでログイン",
+    "loginAsGuestButtonText": "始めましょう"
+  },
+  "workspace": {
+    "chooseWorkspace": "ワークスベースを選択",
+    "create": "ワークスペースを作成する",
+    "reset": "ワークスペースをリセットする",
+    "hint": "ワークスペース",
+    "notFoundError": "ワークスペースがみつかりません",
+    "errorActions": {
+      "reportIssue": "問題を報告",
+      "reportIssueOnGithub": "GitHubで問題を報告",
+      "exportLogFiles": "ログファイルを出力"
+    }
+  },
+  "shareAction": {
+    "buttonText": "共有する",
+    "workInProgress": "Coming soon",
+    "markdown": "Markdown",
+    "csv": "CSV",
+    "copyLink": "リンクをコピー"
+  },
+  "moreAction": {
+    "small": "小さい",
+    "medium": "中くらい",
+    "large": "大きい",
+    "fontSize": "フォントサイズ",
+    "import": "取り込む",
+    "moreOptions": "より多くのオプション"
+  },
+  "importPanel": {
+    "textAndMarkdown": "テキストとマークダウン",
+    "documentFromV010": "v0.1.0 のドキュメント",
+    "databaseFromV010": "v0.1.0 以降のデータベース",
+    "csv": "CSV",
+    "database": "データベース"
+  },
+  "disclosureAction": {
+    "rename": "名前を変更",
+    "delete": "削除",
+    "duplicate": "コピーを作成",
+    "unfavorite": "お気に入りから削除",
+    "favorite": "お気に入りに追加",
+    "openNewTab": "新しいタブで開く",
+    "addToFavorites": "お気に入りに追加",
+    "copyLink": "リンクをコピー"
+  },
+  "blankPageTitle": "空のページ",
+  "newPageText": "新しいページ",
+  "newDocumentText": "新しいドキュメント",
+  "newCalendarText": "新しいカレンダー",
+  "newBoardText": "新しいボード",
+  "trash": {
+    "text": "ごみ箱",
+    "restoreAll": "全て復元",
+    "deleteAll": "全て削除",
+    "pageHeader": {
+      "fileName": "ファイル名",
+      "lastModified": "最終更新日時",
+      "created": "作成日時"
+    },
+    "confirmDeleteAll": {
+      "title": "ゴミ箱内のすべてのページを削除してもよろしいですか?",
+      "caption": "この操作は元に戻すことができません。"
+    },
+    "confirmRestoreAll": {
+      "title": "ゴミ箱内のすべてのページを復元してもよろしいですか?",
+      "caption": "この操作は元に戻すことができません。"
+    },
+    "mobile": {
+      "empty": "ゴミ箱を空にする",
+      "emptyDescription": "削除されたファイルはありません",
+      "isDeleted": "削除済み"
+    }
+  },
+  "deletePagePrompt": {
+    "text": "このページはごみ箱にあります",
+    "restore": "ページを元に戻す",
+    "deletePermanent": "削除する"
+  },
+  "dialogCreatePageNameHint": "ページ名",
+  "questionBubble": {
+    "shortcuts": "ショートカット",
+    "whatsNew": "What's new?",
+    "help": "ヘルプとサポート",
+    "markdown": "マークダウン",
+    "debug": {
+      "name": "デバッグ情報",
+      "success": "デバッグ情報をクリップボードにコピーしました！",
+      "fail": "デバッグ情報をクリップボードにコピーできませんでした"
+    },
+    "feedback": "フィードバック"
+  },
+  "menuAppHeader": {
+    "addPageTooltip": "内部ページを追加",
+    "defaultNewPageName": "Untitled",
+    "renameDialog": "名前を変更"
+  },
+  "toolbar": {
+    "undo": "元に戻す",
+    "redo": "やり直し",
+    "bold": "太字",
+    "italic": "斜体",
+    "underline": "下線",
+    "strike": "取り消し線",
+    "numList": "番号付きリスト",
+    "bulletList": "箇条書き",
+    "checkList": "チェックボックス",
+    "inlineCode": "インラインコード",
+    "quote": "引用文",
+    "header": "見出し",
+    "highlight": "文字の背景色",
+    "color": "色",
+    "addLink": "リンクを追加",
+    "link": "リンク"
+  },
+  "tooltip": {
+    "lightMode": "ライトモードに切り替える",
+    "darkMode": "ダークモードに切り替える",
+    "openAsPage": "ページとして開く",
+    "addNewRow": "新しい行を追加",
+    "openMenu": "クリックしてメニューを開きます",
+    "dragRow": "長押しして行を並べ替えます",
+    "viewDataBase": "データベースを見る",
+    "referencePage": "この {name} は参照されています",
+    "addBlockBelow": "以下にブロックを追加します"
+  },
+  "sideBar": {
+    "closeSidebar": "Close sidebar",
+    "openSidebar": "Open sidebar",
+    "favorites": "お気に入り",
+    "clickToHideFavorites": "クリックしてお気に入りを隠す",
+    "addAPage": "ページを追加",
+    "recent": "最近"
+  },
+  "notifications": {
+    "export": {
+      "markdown": "マークダウン形式のノート",
+      "path": "Documents/flowy"
+    }
+  },
+  "contactsPage": {
+    "title": "連絡先",
+    "whatsHappening": "今週はどんなことがありましたか？",
+    "addContact": "連絡先を追加する",
+    "editContact": "連絡先を編集する"
+  },
+  "button": {
+    "ok": "OK",
+    "done": "終わり",
+    "cancel": "キャンセル",
+    "signIn": "サインイン",
+    "signOut": "サインアウト",
+    "complete": "完了",
+    "save": "保存",
+    "generate": "生成",
+    "esc": "ESC",
+    "keep": "保つ",
+    "tryAgain": "再試行する",
+    "discard": "破棄",
+    "replace": "交換",
+    "insertBelow": "下に挿入",
+    "insertAbove": "上に挿入",
+    "upload": "アップロード",
+    "edit": "編集",
+    "delete": "消去",
+    "duplicate": "複製",
+    "putback": "戻す",
+    "update": "更新",
+    "share": "共有",
+    "removeFromFavorites": "お気に入りから削除",
+    "addToFavorites": "お気に入りへ追加",
+    "rename": "名前を変更",
+    "helpCenter": "ヘルプセンター",
+    "add": "追加"
+  },
+  "label": {
+    "welcome": "ようこそ！",
+    "firstName": "名",
+    "middleName": "ミドルネーム",
+    "lastName": "姓",
+    "stepX": "Step {X}"
+  },
+  "oAuth": {
+    "err": {
+      "failedTitle": "アカウントに接続できません",
+      "failedMsg": "サインインが完了したことをブラウザーで確認してください"
+    },
+    "google": {
+      "title": "Googleでサインイン",
+      "instruction1": "Googleでのサインインを有効にするためには、Webブラウザーを使ってこのアプリケーションを認証する必要があります。",
+      "instruction2": "アイコンをクリックするか、以下のテキストを選択して、このコードをクリップボードにコピーします。",
+      "instruction3": "以下のリンク先をブラウザーで開いて、次のコードを入力します。",
+      "instruction4": "登録が完了したら以下のボタンを押してください。"
+    }
+  },
+  "settings": {
+    "title": "設定",
+    "menu": {
+      "appearance": "外観",
+      "language": "言語",
+      "user": "ユーザー",
+      "files": "ファイル",
+      "notifications": "通知",
+      "open": "設定",
+      "logout": "ログアウト",
+      "logoutPrompt": "本当にログアウトしますか？",
+      "syncSetting": "設定を同期",
+      "enableSync": "同期を有効可",
+      "enableEncrypt": "暗号化されたデータ",
+      "cloudSupabase": "Supabase",
+      "cloudSupabaseUrl": "Supabase URL",
+      "cloudSupabaseUrlCanNotBeEmpty": "Supabase URLは空白にはできません",
+      "cloudSupabaseAnonKey": "Supabase anon key",
+      "cloudSupabaseAnonKeyCanNotBeEmpty": "Supabase anon keyは空白にはできません",
+      "cloudAppFlowy": "@:appName Cloud Beta",
+      "cloudAppFlowySelfHost": "@:appName Cloud セルフホスト",
+      "appFlowyCloudUrlCanNotBeEmpty": "クラウドURLは空白にはできません",
+      "clickToCopy": "クリックしてコピー",
+      "selfHostStart": "サーバーが準備できていない場合、",
+      "selfHostContent": "ドキュメント",
+      "selfHostEnd": "を参照してセルフホストサーバーのセットアップ手順を確認してください",
+      "cloudURLHint": "サーバーのURLを入力",
+      "cloudWSURL": "Websocket URL",
+      "cloudWSURLHint": "Websocketサーバーのアドレスを入力",
+      "restartApp": "再起動",
+      "clickToCopySecret": "クリックしてシークレットをコピー",
+      "historicalUserList": "ログイン履歴",
+      "supabaseSetting": "Supabaseの設定"
+    },
+    "appearance": {
+      "fontFamily": {
+        "label": "フォントファミリー",
+        "search": "検索"
+      },
+      "themeMode": {
+        "label": "外観テーマ",
+        "light": "ライトモード",
+        "dark": "ダークモード",
+        "system": "システムと同期"
+      },
+      "themeUpload": {
+        "button": "アップロード",
+        "uploadTheme": "テーマをアップロード",
+        "description": "下のボタンを使用して、独自の@:appNameテーマをアップロードします。",
+        "loading": "テーマを検証してアップロードするまでお待ちください...",
+        "uploadSuccess": "テーマは正常にアップロードされました",
+        "deletionFailure": "テーマの削除に失敗しました。手動で削除してみてください。",
+        "filePickerDialogTitle": ".flowy_plugin ファイルを選択します",
+        "urlUploadFailure": "URLを開けませんでした: {}",
+        "failure": "アップロードされたテーマの形式が無効でした。"
+      },
+      "theme": "テーマ",
+      "builtInsLabel": "組み込みテーマ",
+      "pluginsLabel": "プラグイン",
+      "dateFormat": {
+        "label": "日付フォーマット"
+      },
+      "timeFormat": {
+        "label": "時刻フォーマット",
+        "twelveHour": "12時間表記",
+        "twentyFourHour": "24時間表記"
+      }
+    },
+    "files": {
+      "copy": "コピー",
+      "defaultLocation": "ファイルの読み取りとデータの保存場所",
+      "exportData": "データをエクスポートする",
+      "doubleTapToCopy": "ダブルタップしてパスをコピーします",
+      "restoreLocation": "@:appNameのデフォルトパスに戻す",
+      "customizeLocation": "別のフォルダーを開く",
+      "restartApp": "変更を有効にするには、アプリを再起動してください。",
+      "exportDatabase": "データベースのエクスポート",
+      "selectFiles": "エクスポートする必要があるファイルを選択します",
+      "selectAll": "すべて選択",
+      "deselectAll": "すべての選択を解除",
+      "createNewFolder": "新しいフォルダーを作成する",
+      "createNewFolderDesc": "データの保存場所を教えてください",
+      "defineWhereYourDataIsStored": "データの保存場所を定義する",
+      "open": "開ける",
+      "openFolder": "既存のフォルダーを開く",
+      "openFolderDesc": "既存の@:appNameフォルダに読み書きします",
+      "folderHintText": "フォルダ名",
+      "location": "新しいフォルダーの作成",
+      "locationDesc": "@:appNameデータフォルダーの名前を選択します",
+      "browser": "ブラウズ",
+      "create": "作成",
+      "set": "設定",
+      "folderPath": "フォルダーを保存するパス",
+      "locationCannotBeEmpty": "パスを空にすることはできません",
+      "pathCopiedSnackbar": "ファイルの保存パスがクリップボードにコピーされました。",
+      "changeLocationTooltips": "データディレクトリを変更する",
+      "change": "変化",
+      "openLocationTooltips": "別のデータ ディレクトリを開く",
+      "openCurrentDataFolder": "現在のデータディレクトリを開く",
+      "recoverLocationTooltips": "@:appNameのデフォルトのデータディレクトリにリセットします",
+      "exportFileSuccess": "ファイルのエクスポートに成功しました。",
+      "exportFileFail": "ファイルのエクスポートに失敗しました!",
+      "export": "書き出す"
+    },
+    "user": {
+      "name": "名前",
+      "selectAnIcon": "アイコンを選択してください",
+      "pleaseInputYourOpenAIKey": "AI キーを入力してください"
+    },
+    "mobile": {
+      "username": "ユーザー名",
+      "usernameEmptyError": "ユーザー名は空白にはできません",
+      "pushNotifications": "プッシュ通知",
+      "support": "サポート",
+      "privacyPolicy": "プライバシーポリシー",
+      "userAgreement": "ユーザー同意",
+      "termsAndConditions": "利用規約",
+      "version": "バージョン"
+    },
+    "shortcuts": {
+      "shortcutsLabel": "ショートカット",
+      "command": "コマンド",
+      "keyBinding": "キーバインディング",
+      "addNewCommand": "新しいコマンドを追加",
+      "resetToDefault": "キーバインディングをデフォルトに戻す"
+    }
+  },
+  "grid": {
+    "deleteView": "このビューを削除してもよろしいですか?",
+    "createView": "新しい",
+    "title": {
+      "placeholder": "Untitled"
+    },
+    "settings": {
+      "filter": "絞り込み",
+      "sort": "選別",
+      "sortBy": "並び替え",
+      "properties": "プロパティ",
+      "reorderPropertiesTooltip": "ドラッグしてプロパティを並べ替えます",
+      "group": "グループ",
+      "addFilter": "フィルターの追加",
+      "deleteFilter": "フィルタの削除",
+      "filterBy": "フィルター条件...",
+      "typeAValue": "値を入力してください...",
+      "layout": "レイアウト",
+      "databaseLayout": "レイアウト",
+      "Properties": "プロパティ"
+    },
+    "textFilter": {
+      "contains": "含まれています",
+      "doesNotContain": "含まれていない",
+      "endsWith": "で終わる",
+      "startWith": "で始まる",
+      "is": "は",
+      "isNot": "ではありません",
+      "isEmpty": "空である",
+      "isNotEmpty": "空ではない",
+      "choicechipPrefix": {
+        "isNot": "いいえ",
+        "startWith": "で始まる",
+        "endWith": "で終わる",
+        "isEmpty": "空である",
+        "isNotEmpty": "空ではない"
+      }
+    },
+    "checkboxFilter": {
+      "isChecked": "チェック済み",
+      "isUnchecked": "未チェック",
+      "choicechipPrefix": {
+        "is": "は"
+      }
+    },
+    "checklistFilter": {
+      "isComplete": "完了",
+      "isIncomplted": "未完了"
+    },
+    "selectOptionFilter": {
+      "is": "等しい",
+      "isNot": "等しくない",
+      "contains": "を含む",
+      "doesNotContain": "を含まない",
+      "isEmpty": "空である",
+      "isNotEmpty": "空ではない"
+    },
+    "field": {
+      "hide": "隠す",
+      "insertLeft": "左に挿入",
+      "insertRight": "右に挿入",
+      "duplicate": "コピーを作成",
+      "delete": "削除",
+      "textFieldName": "テキスト",
+      "checkboxFieldName": "チェックボックス",
+      "dateFieldName": "日付",
+      "updatedAtFieldName": "最終変更時刻",
+      "createdAtFieldName": "作成時間",
+      "numberFieldName": "数値",
+      "singleSelectFieldName": "単一選択",
+      "multiSelectFieldName": "複数選択",
+      "urlFieldName": "URL",
+      "checklistFieldName": "チェックリスト",
+      "numberFormat": "数値書式",
+      "dateFormat": "日付書式",
+      "includeTime": "時刻を含める",
+      "dateFormatFriendly": "月 日, 年",
+      "dateFormatISO": "年-月-日",
+      "dateFormatLocal": "月/日/年",
+      "dateFormatUS": "年/月/日",
+      "dateFormatDayMonthYear": "日月年",
+      "timeFormat": "時刻書式",
+      "invalidTimeFormat": "無効な形式",
+      "timeFormatTwelveHour": "12 時間表記",
+      "timeFormatTwentyFourHour": "24 時間表記",
+      "addSelectOption": "選択候補追加",
+      "optionTitle": "選択候補",
+      "addOption": "選択候補追加",
+      "editProperty": "プロパティの編集",
+      "newProperty": "新しいプロパティ",
+      "deleteFieldPromptMessage": "本当にこのプロパティを削除してもよろしいですか？"
+    },
+    "sort": {
+      "ascending": "昇順",
+      "descending": "降順",
+      "addSort": "並べ替えの追加",
+      "deleteSort": "ソートの削除"
+    },
+    "row": {
+      "duplicate": "コピーを作成",
+      "delete": "削除",
+      "textPlaceholder": "空白",
+      "copyProperty": "プロパティをクリップボードにコピーしました",
+      "count": "カウント",
+      "newRow": "新しい行",
+      "action": "アクション"
+    },
+    "selectOption": {
+      "create": "作成",
+      "purpleColor": "紫",
+      "pinkColor": "ピンク",
+      "lightPinkColor": "ライトピンク",
+      "orangeColor": "オレンジ",
+      "yellowColor": "黄色",
+      "limeColor": "ライム",
+      "greenColor": "緑",
+      "aquaColor": "水色",
+      "blueColor": "青",
+      "deleteTag": "選択候補を削除",
+      "colorPanelTitle": "色",
+      "panelTitle": "選択候補を検索 または 作成する",
+      "searchOption": "選択候補を検索"
+    },
+    "checklist": {
+      "addNew": "アイテムを追加する"
+    },
+    "menuName": "グリッド",
+    "referencedGridPrefix": "のビュー"
+  },
+  "document": {
+    "menuName": "書類",
+    "date": {
+      "timeHintTextInTwelveHour": "午後1時",
+      "timeHintTextInTwentyFourHour": "13:00"
+    },
+    "slashMenu": {
+      "board": {
+        "selectABoardToLinkTo": "リンク先のボードを選択してください",
+        "createANewBoard": "新しいボードを作成する"
+      },
+      "grid": {
+        "selectAGridToLinkTo": "リンク先のグリッドを選択してください",
+        "createANewGrid": "新しいグリッドを作成する"
+      },
+      "calendar": {
+        "selectACalendarToLinkTo": "リンク先のカレンダーを選択してください",
+        "createANewCalendar": "新しいカレンダーを作成する"
+      }
+    },
+    "selectionMenu": {
+      "outline": "概要"
+    },
+    "plugins": {
+      "referencedBoard": "参照ボード",
+      "referencedGrid": "参照されるグリッド",
+      "referencedCalendar": "参照カレンダー",
+      "autoGeneratorMenuItemName": "AI ライター",
+      "autoGeneratorTitleName": "AI: AI に何でも書いてもらいます...",
+      "autoGeneratorLearnMore": "もっと詳しく知る",
+      "autoGeneratorGenerate": "生成",
+      "autoGeneratorHintText": "OpenAIに質問してください...",
+      "autoGeneratorCantGetOpenAIKey": "AI キーを取得できません",
+      "autoGeneratorRewrite": "リライト",
+      "smartEdit": "AIアシスタント",
+      "aI": "AI",
+      "smartEditFixSpelling": "スペルを修正",
+      "warning": "⚠️ AI の応答は不正確または誤解を招く可能性があります。",
+      "smartEditSummarize": "要約する",
+      "smartEditImproveWriting": "ライティングを改善する",
+      "smartEditMakeLonger": "もっと長くする",
+      "smartEditCouldNotFetchResult": "OpenAIから結果を取得できませんでした",
+      "smartEditCouldNotFetchKey": "AI キーを取得できませんでした",
+      "smartEditDisabled": "設定で AI に接続する",
+      "discardResponse": "AI の応答を破棄しますか?",
+      "createInlineMathEquation": "方程式の作成",
+      "toggleList": "リストの切り替え",
+      "cover": {
+        "changeCover": "表紙を変える",
+        "colors": "色",
+        "images": "画像",
+        "clearAll": "すべてクリア",
+        "abstract": "概要",
+        "addCover": "カバーを追加する",
+        "addLocalImage": "ローカルイメージを追加",
+        "invalidImageUrl": "無効な画像 URL",
+        "failedToAddImageToGallery": "画像をギャラリーに追加できませんでした",
+        "enterImageUrl": "画像のURLを入力してください",
+        "add": "追加",
+        "back": "戻る",
+        "saveToGallery": "ギャラリーに保存",
+        "removeIcon": "アイコンを削除",
+        "pasteImageUrl": "画像のURLを貼り付けます",
+        "or": "また",
+        "pickFromFiles": "ファイルから選択",
+        "couldNotFetchImage": "画像を取得できませんでした",
+        "imageSavingFailed": "画像の保存に失敗しました",
+        "addIcon": "アイコンを追加",
+        "coverRemoveAlert": "削除後は表紙からも外されます。",
+        "alertDialogConfirmation": "続行しますか?"
+      },
+      "mathEquation": {
+        "addMathEquation": "数式を追加",
+        "editMathEquation": "数式の編集"
+      },
+      "optionAction": {
+        "click": "クリック",
+        "toOpenMenu": " メニューを開く",
+        "delete": "消去",
+        "duplicate": "複製",
+        "turnInto": "へ変更",
+        "moveUp": "上に移動",
+        "moveDown": "下に移動",
+        "color": "色",
+        "align": "整列",
+        "left": "左",
+        "center": "中心",
+        "right": "右",
+        "defaultColor": "デフォルト"
+      },
+      "image": {
+        "copiedToPasteBoard": "画像リンクがクリップボードにコピーされました"
+      },
+      "outline": {
+        "addHeadingToCreateOutline": "見出しを追加して目次を作成します。"
+      }
+    },
+    "textBlock": {
+      "placeholder": "コマンドには「/」を入力します"
+    },
+    "title": {
+      "placeholder": "無題"
+    },
+    "imageBlock": {
+      "placeholder": "クリックして画像を追加",
+      "upload": {
+        "label": "アップロード",
+        "placeholder": "クリックして画像をアップロード"
+      },
+      "url": {
+        "label": "画像URL",
+        "placeholder": "画像のURLを入力してください"
+      },
+      "support": "画像サイズ制限は5MBです。サポートされている形式: JPEG、PNG、GIF、SVG",
+      "error": {
+        "invalidImage": "無効な画像です",
+        "invalidImageSize": "画像サイズは5MB未満である必要があります",
+        "invalidImageFormat": "画像形式はサポートされていません。サポートされている形式: JPEG、PNG、GIF、SVG",
+        "invalidImageUrl": "無効な画像 URL"
+      }
+    },
+    "codeBlock": {
+      "language": {
+        "label": "言語",
+        "placeholder": "言語を選択する"
+      }
+    },
+    "inlineLink": {
+      "placeholder": "リンクを貼り付けるか入力します",
+      "url": {
+        "label": "リンクURL",
+        "placeholder": "リンクURLを入力してください"
+      },
+      "title": {
+        "label": "リンクタイトル",
+        "placeholder": "リンクタイトルを入力してください"
+      }
+    }
+  },
+  "board": {
+    "column": {
+      "createNewCard": "新しい"
+    },
+    "menuName": "ボード",
+    "referencedBoardPrefix": "のビュー",
+    "mobile": {
+      "showGroup": "グループを表示",
+      "showGroupContent": "このグループをボードに表示してもよろしいですか?",
+      "failedToLoad": "ボードビューの読み込みに失敗しました"
+    }
+  },
+  "calendar": {
+    "menuName": "カレンダー",
+    "defaultNewCalendarTitle": "無題",
+    "navigation": {
+      "today": "今日",
+      "jumpToday": "今日にジャンプ",
+      "previousMonth": "前月",
+      "nextMonth": "来月"
+    },
+    "settings": {
+      "showWeekNumbers": "週番号を表示する",
+      "showWeekends": "週末を表示する",
+      "firstDayOfWeek": "週の開始日",
+      "layoutDateField": "レイアウトカレンダー",
+      "noDateTitle": "日付なし",
+      "clickToAdd": "クリックしてカレンダーに追加します",
+      "name": "カレンダーのレイアウト",
+      "noDateHint": "予定外のイベントがここに表示されます"
+    },
+    "referencedCalendarPrefix": "のビュー"
+  },
+  "errorDialog": {
+    "title": "@:appNameエラー",
+    "howToFixFallback": "ご不便をおかけして申し訳ございません。エラーを説明した issue を GitHub ページに送信してください。",
+    "github": "GitHub で見る"
+  },
+  "search": {
+    "label": "検索",
+    "placeholder": {
+      "actions": "検索アクション..."
+    }
+  },
+  "message": {
+    "copy": {
+      "success": "コピーしました！",
+      "fail": "コピーできません"
+    }
+  },
+  "unSupportBlock": "現在のバージョンではこのブロックはサポートされていません。",
+  "views": {
+    "deleteContentTitle": "{pageType} を削除してもよろしいですか?",
+    "deleteContentCaption": "この {pageType} を削除しても、ゴミ箱から復元できます。"
+  }
+}
